@@ -1,11 +1,2 @@
-one:
-  name: "The Postal Service"
-  bio: ''
-  image: ''
-  video: ''
-
-two:
-  name: "Coheed and Cambria"
-  bio: ''
-  image: ''
-  video: ''
+one: 
+  name: 'The Postal Service'

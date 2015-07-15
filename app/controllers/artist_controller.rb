@@ -1,4 +1,4 @@
-class ArtistController < ActionController
+class ArtistsController < ActionController
 
   def index
     @artists = Artist.all
@@ -8,14 +8,6 @@ class ArtistController < ActionController
     @artist = Artist.new
   end
 
-  def show
-    @artist = get_artist
-  end
-
-  def edit  
-    @artist = get_artist
-  end
-
   def create
     @artist = Artist.new(artist_params)
     if @artist.save
@@ -23,6 +15,14 @@ class ArtistController < ActionController
     else
       render :new
     end
+  end
+
+  def show
+    @artist = get_artist
+  end
+
+  def edit  
+    @artist = get_artist
   end
 
   def update

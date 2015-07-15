@@ -1,8 +1,4 @@
-class AlbumController < ApplicationController
-
-  def index
-    @albums = Album.all
-  end
+class AlbumsController < ApplicationController
 
   def new
     @album = Album.new
@@ -17,10 +13,6 @@ class AlbumController < ApplicationController
     end
   end
 
-  def show
-    @album = get_album
-  end
-
   def edit
     @album = get_album
   end
@@ -28,7 +20,7 @@ class AlbumController < ApplicationController
   def update
     @album = get_album
     if @album.update_attributes(album_params)
-      redirect_to @album
+      redirect_to album_path(@album)
     else
       render :edit
     end

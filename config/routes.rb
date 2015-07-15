@@ -3,8 +3,12 @@ Rails.application.routes.draw do
   root 'home#index'
 
   resources :artists do
-    resources :albums do
-      resources :songs
+    resources :albums, except [:index, :show] do
+      resources :songs, except [:index, :show] do
+      end
     end
   end
-end
+
+  resources :songs, except [:index, :show]
+  resources :albums, except [:index, :show]
+
